@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
+
 // <tr key={estimatesData.display_name}>
 //   <td>{estimatesData.display_name}</td>
 //   <td>{estimatesData.estimate}</td>
@@ -17,8 +19,6 @@ import { connect } from 'react-redux';
 // <th>Duration</th>
 // <th>Surge Multiplier</th>
 // <th>Currency Code</th>
-
-
 
 class EstimatesList extends Component {
 
@@ -57,8 +57,6 @@ class EstimatesList extends Component {
     )
   }
 }
-
-
 
 // function mapStateToProps(state) {
 //   // this is from reducer/index.js

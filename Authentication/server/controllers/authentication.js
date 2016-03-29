@@ -1,4 +1,20 @@
+const jwt = require('jwt-simple');
 const User = require('../models/user');
+const config = require('../config');
+
+// What is sub?
+// A JSON web tokens have a sub property.
+// So the subject of this token is the user
+function tokenForUser(user) {
+  const timestamp = new Date().getTime();
+  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+}
+
+exports.signin = function(req, res, next) {
+  // User has already had their email and password auth'd.
+  // We jsut need to give them token.
+  res.send({ token: tokenForUser(req.user) });
+}
 
 exports.signup = function(req, res, next) {
 
@@ -32,18 +48,10 @@ exports.signup = function(req, res, next) {
       if (err) { return next(err); }
 
       // Respond to request indicating the user was created
-      res.json(user);
+      res.json({ token: tokenForUser(user) });
     });
 
   });
 
-
-
-
-
   // If a user with email does not exist, create and save user record
-
-
-
-
 }

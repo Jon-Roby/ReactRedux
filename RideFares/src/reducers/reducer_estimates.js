@@ -2,7 +2,7 @@ import { FETCH_ESTIMATES } from '../actions/index';
 
 
 export default function(state = [], action) {
-  // console.log('Action received: ', action);
+  console.log('Action received: ', action);
 
 
   switch (action.type) {

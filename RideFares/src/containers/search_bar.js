@@ -7,8 +7,6 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    
-
     this.state = {
       startLatitude: '37.7772',
       startLongitude: '-122.4233',
